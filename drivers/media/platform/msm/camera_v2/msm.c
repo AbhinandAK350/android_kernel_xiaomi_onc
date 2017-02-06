@@ -57,6 +57,8 @@ static spinlock_t msm_pid_lock;
 
 static uint32_t gpu_limit;
 
+static uint32_t gpu_limit;
+
 /*
  * It takes 20 bytes + NULL character to write the
  * largest decimal value of an uint64_t

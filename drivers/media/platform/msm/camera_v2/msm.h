@@ -116,7 +116,9 @@ struct msm_session {
 	struct mutex lock;
 	struct mutex lock_q;
 	struct mutex close_lock;
-	rwlock_t	stream_rwlock;
+
+	rwlock_t stream_rwlock;
+
 	struct kgsl_pwr_limit *sysfs_pwr_limit;
 };
 
