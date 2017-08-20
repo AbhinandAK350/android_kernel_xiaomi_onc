@@ -36,6 +36,10 @@ config IOSCHED_FIOPS
           IOPS equally among all processes in the system. It's mainly for
           Flash based storage.
 
+config IOSCHED_MAPLE
+	tristate "Maple I/O scheduler"
+	default y
+	
 config IOSCHED_CFQ
 	tristate "CFQ I/O scheduler"
 	default n
@@ -89,6 +93,7 @@ config DEFAULT_IOSCHED
 	default "noop" if DEFAULT_NOOP
 	default "anxiety" if DEFALT_ANXIETY
 	default "fiops" if DEFAULT_FIOPS
+	default "maple" if DEFAULT_MAPLE
 
 endmenu
 
