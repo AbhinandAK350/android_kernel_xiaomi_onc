@@ -7414,11 +7414,14 @@ retry:
 		? best_active_cpu
 		: best_idle_cpu;
 
+/*<<<<<<< HEAD
 	if (target_cpu == -1 && most_spare_cap_cpu != -1 &&
-		/* ensure we use active cpu for active migration */
+		/* ensure we use active cpu for active migration **************************
 		!(p->state == TASK_RUNNING && !idle_cpu(most_spare_cap_cpu)))
 		target_cpu = most_spare_cap_cpu;
 
+=======
+>>>>>>> 0c2f9d07c679... sched/fair: dont run energy calculation unless necessary*/
 	if (target_cpu == -1 && cpu_isolated(prev_cpu) &&
 			isolated_candidate != -1) {
 		target_cpu = isolated_candidate;
