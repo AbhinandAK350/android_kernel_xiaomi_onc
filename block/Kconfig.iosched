@@ -83,6 +83,9 @@ choice
 	config DEFAULT_FIOPS
                 bool "FIOPS" if IOSCHED_FIOPS=y
 
+	config DEFAULT_MAPLE
+                bool "Maple" if IOSCHED_MAPLE=y
+
 endchoice
 
 config DEFAULT_IOSCHED
