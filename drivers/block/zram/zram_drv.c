@@ -39,7 +39,11 @@ static DEFINE_IDR(zram_index_idr);
 static DEFINE_MUTEX(zram_index_mutex);
 
 static int zram_major;
+#ifdef CONFIG_ZEN_INTERACTIVE
+static const char *default_compressor = "lz4";
+#else
 static const char *default_compressor = CONFIG_ZRAM_DEFAULT_COMP_ALGORITHM;
+#endif
 
 /*
  * We don't need to see memory allocation errors more than once every 1
