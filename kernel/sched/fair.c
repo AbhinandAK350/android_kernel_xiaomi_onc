@@ -7263,6 +7263,7 @@ retry:
 				 * shallow idle big CPU.
 				 */
 				if (sysctl_sched_cstate_aware &&
+				    sysctl_sched_cstate_aware &&
 				    best_idle_cstate <= idle_idx)
 					continue;
 
@@ -7304,8 +7305,8 @@ retry:
 			active_cpus_count++;
 
 			/* Favor CPUs with maximum spare capacity */
-			if ((capacity_orig - min_capped_util) <
-				target_max_spare_cap)
+			if (capacity_orig == target_capacity &&
+			    (capacity_orig - new_util) < target_max_spare_cap)
 				continue;
 
 			target_max_spare_cap = capacity_orig - min_capped_util;
