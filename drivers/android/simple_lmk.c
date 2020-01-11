@@ -334,7 +334,7 @@ static int simple_lmk_init_set(const char *val, const struct kernel_param *kp)
 		pr_info("Detected 8GB memory: lmk aggression 2");
 	}
 
-	thread = kthread_run(simple_lmk_reclaim_thread, NULL, "simple_lmkd");
+	thread = kthread_run_perf_critical(simple_lmk_reclaim_thread, NULL, "simple_lmkd");
 	BUG_ON(IS_ERR(thread));
 
 	return 0;
