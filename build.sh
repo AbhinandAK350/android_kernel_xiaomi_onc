@@ -8,10 +8,10 @@
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=$KERNEL_DIR/AnyKernel3
-CONFIG=onc_defconfig
+CONFIG=onclite-perf_defconfig
 CROSS_COMPILE="aarch64-linux-android-"
 CROSS_COMPILE_ARM32="arm-linux-androideabi-"
-PATH=:"${KERNEL_DIR}/clang/clang-r353983c/bin:${PATH}:${KERNEL_DIR}/stock/bin:${PATH}:${KERNEL_DIR}/stock_32/bin:${PATH}"
+PATH=:"${KERNEL_DIR}/clang/clang-r383902/bin:${PATH}:${KERNEL_DIR}/stock/bin:${PATH}:${KERNEL_DIR}/stock_32/bin:${PATH}"
 
 # Export
 export ARCH=arm64
