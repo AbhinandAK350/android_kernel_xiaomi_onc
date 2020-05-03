@@ -24,3 +24,24 @@ static inline void wcd_mbhc_legacy_init(struct wcd_mbhc *mbhc)
 #endif
 
 #endif /* __WCD_MBHC_LEGACY_H__ */
+
+/ {
+	model = "Qualcomm Technologies, Inc. SDM429 BG WTP";
+	compatible = "qcom,sdm429w-qrd", "qcom,sdm429w", "qcom,qrd";
+	qcom,msm-id = <416 0x0>;
+	qcom,board-id = <0x00010b 8>;
+	qcom,pmic-id = <0x0002001b 0x0 0x0 0x0>;
+};
+
+&msm_gpu {
+	/delete-property/qcom,enable-ca-jump;
+	/delete-property/qcom,ca-busy-penalty;
+	/delete-property/qcom,ca-target-pwrlevel;
+
+	qcom,gpu-pwrlevels {
+		/delete-node/qcom,gpu-pwrlevel@2;
+		/delete-node/qcom,gpu-pwrlevel@3;
+		/delete-node/qcom,gpu-pwrlevel@4;
+		/delete-node/qcom,gpu-pwrlevel@5;
+	};
+};
